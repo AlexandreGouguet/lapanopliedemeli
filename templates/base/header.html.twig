@@ -1,0 +1,37 @@
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a href="{{ path('home') }}" class="logo">
+                        <img src="/assets/images/logo.png">
+                    </a>
+                    <ul class="nav">
+                        {% if menu_active is not defined %}
+                            {% set menu_active = null %}
+                        {% endif %}
+                        <li class="scroll-to-section"><a href="{{ path('home') }}" {% if menu_active is same as("home") %} class="active" {% endif %}>Accueil</a></li>
+                        <li class="scroll-to-section"><a href="{{ path('products') }}" {% if menu_active is same as("products") %} class="active" {% endif %}>Nos produits</a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li class="scroll-to-section"><a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Mon profil</a></li>
+                        {% else %}
+                            <li class="scroll-to-section"><a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Connexion</a></li>
+                        {% endif %}
+{#                        <li class="submenu">#}
+{#                            <a href="javascript:;">Pages</a>#}
+{#                            <ul>#}
+{#                                <li><a href="about.html">About Us</a></li>#}
+{#                                <li><a href="products.html">Products</a></li>#}
+{#                                <li><a href="single-product.html">Single Product</a></li>#}
+{#                                <li><a href="contact.html">Contact Us</a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% set menu_active = 'home' %}
+
+{% block body %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>{{ presentation_products[0].name }}</h4>
+                                <span>{{ presentation_products[0].description }}</span>
+                                <div class="main-border-button">
+                                    <a href="#">Acheter !</a>
+                                </div>
+                            </div>
+                            <img src="/assets/images/left-banner-image.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>{{ presentation_products[1].name }}</h4>
+                                            <span>{{ presentation_products[1].description }}</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>{{ presentation_products[1].name }}</h4>
+                                                <p>{{ presentation_products[1].description }}</p>
+                                                <div class="main-border-button">
+                                                    <a href="#">Découvrir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/assets/images/baner-right-image-01.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>{{ presentation_products[2].name }}</h4>
+                                            <span>{{ presentation_products[2].description }}</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>{{ presentation_products[2].name }}</h4>
+                                                <p>{{ presentation_products[2].description }}</p>
+                                                <div class="main-border-button">
+                                                    <a href="#">Découvrir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/assets/images/baner-right-image-02.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>{{ presentation_products[3].name }}</h4>
+                                            <span>{{ presentation_products[3].description }}</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>{{ presentation_products[3].name }}</h4>
+                                                <p>{{ presentation_products[3].description }}</p>
+                                                <div class="main-border-button">
+                                                    <a href="#">Découvrir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/assets/images/baner-right-image-03.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>{{ presentation_products[4].name }}</h4>
+                                            <span>{{ presentation_products[4].description }}</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>{{ presentation_products[4].name }}</h4>
+                                                <p>{{ presentation_products[4].description }}</p>
+                                                <div class="main-border-button">
+                                                    <a href="#">Découvrir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/assets/images/baner-right-image-04.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+{% endblock %}
