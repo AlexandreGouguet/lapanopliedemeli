@@ -14,7 +14,7 @@ final class Version20240606191405 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'Add is_verified to user table';
     }
 
     public function up(Schema $schema): void

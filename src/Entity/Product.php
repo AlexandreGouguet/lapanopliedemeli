@@ -26,6 +26,14 @@ class Product
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $presentationPosition = null;
 
+    #[ORM\Column]
+    private \DateTimeImmutable $created_at;
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +83,18 @@ class Product
     public function setPresentationPosition(?int $presentationPosition): static
     {
         $this->presentationPosition = $presentationPosition;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $created_at): static
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }
