@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% set menu_active = 'cart' %}
+
+{% block body %}
+    <div class="main-banner w-75 mx-auto">
+        <table class="table product-table">
+            <thead>
+            <tr>
+                <th scope="col" class="bg-primary text-white">Nom</th>
+                <th scope="col" class="bg-primary text-white">Quantité</th>
+                <th scope="col" class="bg-primary text-white">Prix total</th>
+                <th scope="col" class="bg-primary text-white"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set totalPrice = 0 %}
+            {% if cart is not empty and cart.cartProducts is not empty %}
+                {% for cartProduct in cart.cartProducts %}
+                    <tr>
+                        <td>
+                            {{ cartProduct.product.name }}
+                        </td>
+                        <td>
+                            {{ cartProduct.quantity }}
+                        </td>
+                        <td>
+                            {% set totalProductPrice = cartProduct.quantity * cartProduct.product.price %}
+                            {{ totalProductPrice }}€
+                        </td>
+                        <td>
+                            <a href="{{ path('cart_remove', {cartProductId: cartProduct.id}) }}">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% set totalPrice = totalPrice + totalProductPrice %}
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>
+                        Panier vide
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            {% endif %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Prix total : {{ totalPrice }}€</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <a href="{{ path('cart_empty') }}">
+            <button class="btn btn-lg btn-danger">Vider mon panier</button>
+        </a>
+
+        {% include 'payment/paypal.html.twig' %}
+    </div>
+{% endblock %}

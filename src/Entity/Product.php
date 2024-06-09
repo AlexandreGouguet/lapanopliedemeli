@@ -23,15 +23,15 @@ class Product
     #[ORM\Column(length: 65536, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $presentationPosition = null;
-
     #[ORM\Column]
-    private \DateTimeImmutable $created_at;
+    private \DateTimeImmutable $createdAt;
+
+    #[ORM\ManyToOne]
+    private Category $category;
 
     public function __construct()
     {
-        $this->created_at = new \DateTimeImmutable();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -75,26 +75,26 @@ class Product
         return $this;
     }
 
-    public function getPresentationPosition(): ?int
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
-        return $this->presentationPosition;
+        return $this->createdAt;
     }
 
-    public function setPresentationPosition(?int $presentationPosition): static
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
-        $this->presentationPosition = $presentationPosition;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCategory(): ?Category
     {
-        return $this->created_at;
+        return $this->category;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
+    public function setCategory(?Category $category): static
     {
-        $this->created_at = $created_at;
+        $this->category = $category;
 
         return $this;
     }

@@ -2,18 +2,26 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="first-item">
                     <div class="logo">
                         <img src="/assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <h4>Liens utiles</h4>
                 <ul>
                     <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('products') }}">Nos produits</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h4>Catégories</h4>
+                <ul>
+                    {% for category in categories %}
+                        <li><a href="{{ path('products', {categoryId: category.id}) }}">{{ category.name }}</a></li>
+                    {%  endfor %}
                 </ul>
             </div>
             <div class="col-lg-12">

@@ -21,6 +21,10 @@ class Cart
     #[ORM\OneToMany(targetEntity: CartProduct::class, mappedBy: 'cart', orphanRemoval: true)]
     private Collection $cartProducts;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
     public function __construct()
     {
         $this->cartProducts = new ArrayCollection();
@@ -57,6 +61,25 @@ class Cart
                 $cartProduct->setCart(null);
             }
         }
+
+        return $this;
+    }
+
+    public function emptyCartProduct(): static
+    {
+        $this->cartProducts->clear();
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

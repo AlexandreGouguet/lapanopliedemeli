@@ -5,7 +5,6 @@
 {% set menu_active = 'products' %}
 
 {% block body %}
-    <!-- ***** Product Area Starts ***** -->
     <section class="section main-banner" id="product">
         <div class="container">
             <div class="row">
@@ -36,39 +35,31 @@
                             </div>
                             <div class="right-content">
                                 <div class="quantity buttons_added">
-                                    <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="number" id ="quantity" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onchange="onQuantityChange()">
+                                    <input type="button" value="+" class="plus">
                                 </div>
                             </div>
                         </div>
                         <div class="total">
-                            <h4>Total: {{ product.price }}€</h4>
-                            <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                            <h4 id="totalPrice">Total: {{ product.price }}€</h4>
+                            <div class="main-border-button"><a id="addToCartButton" href="{{ path('cart_add', {productId: product.id, quantity: 1}) }}">Ajouter au panier</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Product Area Ends ***** -->
 {% endblock %}
 
 {% block script %}
     <!-- Plugins -->
     <script src="/assets/js/quantity.js"></script>
-
     <script>
-        $(function() {
-            var selectedClass = "";
-            $("p").click(function(){
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("."+selectedClass).fadeOut();
-                setTimeout(function() {
-                    $("."+selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
-
-            });
-        });
+        function onQuantityChange() {
+            var link = document.getElementById('addToCartButton').href;
+            document.getElementById('addToCartButton').href = link.split('?quantity=')[0] + '?quantity=' + document.getElementById('quantity').value;
+            document.getElementById('totalPrice').innerHTML = 'Total : ' + (document.getElementById('quantity').value * {{ product.price }}).toFixed(2) + '€'
+        }
     </script>
 {% endblock %}

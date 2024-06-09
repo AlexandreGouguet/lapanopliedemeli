@@ -11,24 +11,27 @@
                             {% set menu_active = null %}
                         {% endif %}
                         <li class="scroll-to-section"><a href="{{ path('home') }}" {% if menu_active is same as("home") %} class="active" {% endif %}>Accueil</a></li>
-                        <li class="scroll-to-section"><a href="{{ path('products') }}" {% if menu_active is same as("products") %} class="active" {% endif %}>Nos produits</a></li>
+                        <li class="submenu">
+                            <a href="{{ path('products') }}" {% if menu_active is same as("products") %} class="active" {% endif %}>Nos produits</a>
+                            <ul>
+                                {% for category in categories %}
+                                    <li><a href="{{ path('products', {categoryId: category.id}) }}">{{ category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li class="scroll-to-section"><a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Mon profil</a></li>
+                            <li class="scroll-to-section">
+                                <a href="{{ path('cart') }}" {% if menu_active is same as("cart") %} class="active" {% endif %}><i class="fa fa-shopping-cart"></i> Mon panier</a>
+                            </li>
                         {% else %}
                             <li class="scroll-to-section"><a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Connexion</a></li>
                         {% endif %}
                         {% if is_granted('ROLE_ADMIN') %}
                             <li class="scroll-to-section"><a href="{{ path('admin') }}"><i class="fa fa-lock"></i> Administration</a></li>
                         {% endif %}
-{#                        <li class="submenu">#}
-{#                            <a href="javascript:;">Pages</a>#}
-{#                            <ul>#}
-{#                                <li><a href="about.html">About Us</a></li>#}
-{#                                <li><a href="products.html">Products</a></li>#}
-{#                                <li><a href="single-product.html">Single Product</a></li>#}
-{#                                <li><a href="contact.html">Contact Us</a></li>#}
-{#                            </ul>#}
-{#                        </li>#}
+                        {% if app.user %}
+                            <li class="scroll-to-section"><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        {% endif %}
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
