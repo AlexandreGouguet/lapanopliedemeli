@@ -31,11 +31,11 @@
 {#                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>#}
                                     </ul>
                                 </div>
-                                <img src="/assets/images/men-01.jpg" alt="">
+                                <img src="{{ vich_uploader_asset(product) }}" alt="{{ product.name }}">
                             </div>
                             <div class="down-content">
                                 <h4>{{ product.name }}</h4>
-                                <span>{{ product.price }}€</span>
+                                <span>{{ product.price }}{% if product.price|trim is not empty %}€{% else %}Gratuit{% endif %}</span>
                                 {#                            <ul class="stars">#}
                                 {#                                <li><i class="fa fa-star"></i></li>#}
                                 {#                                <li><i class="fa fa-star"></i></li>#}

@@ -49,6 +49,10 @@
         <source>Presentation Position</source>
         <target>Position sur l'écran d'accueil</target>
       </trans-unit>
+      <trans-unit id="messagesfr12" resname="Category">
+        <source>Category</source>
+        <target>Catégorie</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

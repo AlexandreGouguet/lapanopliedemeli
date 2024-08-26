@@ -55,14 +55,18 @@ class CartController extends AbstractController
         int $productId
     ): Response
     {
+        if(!$this->isGranted('IS_AUTHENTICATED')){
+            return $this->redirectToRoute('app_login');
+        }
+
         $quantity = $request->query->get('quantity', 1);
         $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
         $cartProduct = $cartProductRepository->findOneBy(['product' => $productId, 'cart' => $cart]);
+
         if($cartProduct !== null){
             $cartProduct->setQuantity($cartProduct->getQuantity() + $quantity);
         } else {
             $product = $productRepository->findOneBy(['id' => $productId]);
-
             $cartProduct = new CartProduct();
             $cartProduct->setCart($cart);
             $cartProduct->setProduct($product);
@@ -72,7 +76,7 @@ class CartController extends AbstractController
 
         $entityManager->flush();
 
-        return $this->redirectToRoute('cart');
+        return $this->redirectToRoute('product', ['id' => $productId]);
     }
 
     #[Route('/cart/empty', name: 'cart_empty')]

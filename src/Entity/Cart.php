@@ -53,9 +53,9 @@ class Cart
         return $this;
     }
 
-    public function removeCartProduct(CartProduct $cartProduct): static
+    public function removeCartProduct(?CartProduct $cartProduct): static
     {
-        if ($this->cartProducts->removeElement($cartProduct)) {
+        if ($cartProduct instanceof CartProduct && $this->cartProducts->removeElement($cartProduct)) {
             // set the owning side to null (unless already changed)
             if ($cartProduct->getCart() === $this) {
                 $cartProduct->setCart(null);

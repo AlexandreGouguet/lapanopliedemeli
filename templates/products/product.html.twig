@@ -17,7 +17,7 @@
                 <div class="col-lg-4">
                     <div class="right-content">
                         <h4>{{ product.name }}</h4>
-                        <span class="price">{{ product.price }}€</span>
+                        <span class="price">{{ product.price }}{% if product.price|trim is not empty %}€{% else %}Gratuit{% endif %}</span>
 {#                        <ul class="stars">#}
 {#                            <li><i class="fa fa-star"></i></li>#}
 {#                            <li><i class="fa fa-star"></i></li>#}
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="total">
-                            <h4 id="totalPrice">Total: {{ product.price }}€</h4>
+                            <h4 id="totalPrice">Total: {{ product.price }}{% if product.price|trim is not empty %}€{% else %}Gratuit{% endif %}</h4>
                             <div class="main-border-button"><a id="addToCartButton" href="{{ path('cart_add', {productId: product.id, quantity: 1}) }}">Ajouter au panier</a></div>
                         </div>
                     </div>
