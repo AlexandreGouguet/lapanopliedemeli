@@ -10,8 +10,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="left-images">
-                        <img src="/assets/images/single-product-01.jpg" alt="">
-                        <img src="/assets/images/single-product-02.jpg" alt="">
+                        <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.imageName }}">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -36,13 +35,13 @@
                             <div class="right-content">
                                 <div class="quantity buttons_added">
                                     <input type="button" value="-" class="minus">
-                                    <input type="number" id ="quantity" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onchange="onQuantityChange()">
+                                    <input type="number" id ="quantity" step="1" min="1" max="100" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" onchange="onQuantityChange()">
                                     <input type="button" value="+" class="plus">
                                 </div>
                             </div>
                         </div>
                         <div class="total">
-                            <h4 id="totalPrice">Total: {{ product.price }}{% if product.price|trim is not empty %}€{% else %}Gratuit{% endif %}</h4>
+                            <h4 id="totalPrice">Total : {{ product.price }}{% if product.price|trim is not empty %}€{% else %}Gratuit{% endif %}</h4>
                             <div class="main-border-button"><a id="addToCartButton" href="{{ path('cart_add', {productId: product.id, quantity: 1}) }}">Ajouter au panier</a></div>
                         </div>
                     </div>
@@ -53,13 +52,19 @@
 {% endblock %}
 
 {% block script %}
-    <!-- Plugins -->
     <script src="/assets/js/quantity.js"></script>
     <script>
         function onQuantityChange() {
             var link = document.getElementById('addToCartButton').href;
-            document.getElementById('addToCartButton').href = link.split('?quantity=')[0] + '?quantity=' + document.getElementById('quantity').value;
-            document.getElementById('totalPrice').innerHTML = 'Total : ' + (document.getElementById('quantity').value * {{ product.price }}).toFixed(2) + '€'
+            var quantity = document.getElementById('quantity').value;
+
+            if(quantity > 100){
+                document.getElementById('quantity').value = 100;
+                quantity = 100;
+            }
+
+            document.getElementById('addToCartButton').href = link.split('?quantity=')[0] + '?quantity=' + quantity;
+            document.getElementById('totalPrice').innerHTML = 'Total : ' + (quantity * {{ product.price }}).toFixed(2) + '€'
         }
     </script>
 {% endblock %}
