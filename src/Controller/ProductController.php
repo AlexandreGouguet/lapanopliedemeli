@@ -22,6 +22,7 @@ class ProductController extends AbstractController
         }
         return $this->render('products/products.html.twig', [
             'products' => $products,
+            'category' => $categoryId ? $categoryRepository->find($categoryId) : null,
             'categories' => $categoryRepository->findAll()
         ]);
     }

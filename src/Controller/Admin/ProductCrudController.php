@@ -24,7 +24,7 @@ class ProductCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             MoneyField::new('price')->setCurrency('EUR')->setStoredAsCents(false),
-            TextEditorField::new('description'),
+            TextEditorField::new('description')->onlyOnForms(),
             AssociationField::new('category')->setRequired(true),
             Field::new('imageFile')->setFormType(VichImageType::class)->onlyOnForms(),
             ImageField::new('imageName', 'Image')->setBasePath('/uploads/products')->onlyOnIndex(),

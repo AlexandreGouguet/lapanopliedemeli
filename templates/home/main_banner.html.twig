@@ -6,12 +6,12 @@
                     <div class="thumb">
                         <div class="inner-content">
                             <h4>{{ presentation_categories[0].name }}</h4>
-                            <span id="main-description">{{ presentation_categories[0].description }}</span>
+                            <span id="main-description">{{ presentation_categories[0].description | raw}}</span>
                             <div class="main-border-button">
                                 <a href="{{ path('product', {id: presentation_categories[0].id}) }}">Acheter !</a>
                             </div>
                         </div>
-                        <img src="/assets/images/left-banner-image.jpg" alt="">
+                        <img src="{{ vich_uploader_asset(presentation_categories[0], 'imageFile') }}" alt="{{ presentation_categories[0].imageName }}">
                     </div>
                 </div>
             </div>
@@ -27,13 +27,13 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[1].name }}</h4>
-                                            <p>{{ presentation_categories[1].description }}</p>
+                                            <p>{{ presentation_categories[1].description | raw}}</p>
                                             <div class="main-border-button">
                                                 <a href="{{ path('product', {id: presentation_categories[1].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="/assets/images/baner-right-image-01.jpg">
+                                    <img src="{{ vich_uploader_asset(presentation_categories[1], 'imageFile') }}" alt="{{ presentation_categories[1].imageName }}">
                                 </div>
                             </div>
                         </div>
@@ -46,13 +46,13 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[2].name }}</h4>
-                                            <p>{{ presentation_categories[2].description }}</p>
+                                            <p>{{ presentation_categories[2].description | raw}}</p>
                                             <div class="main-border-button">
                                                 <a href="{{ path('product', {id: presentation_categories[2].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="/assets/images/baner-right-image-02.jpg">
+                                    <img src="{{ vich_uploader_asset(presentation_categories[2], 'imageFile') }}" alt="{{ presentation_categories[2].imageName }}">
                                 </div>
                             </div>
                         </div>
@@ -65,13 +65,13 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[3].name }}</h4>
-                                            <p>{{ presentation_categories[3].description }}</p>
+                                            <p>{{ presentation_categories[3].description | raw}}</p>
                                             <div class="main-border-button">
                                                 <a href="{{ path('product', {id: presentation_categories[3].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="/assets/images/baner-right-image-03.jpg">
+                                    <img src="{{ vich_uploader_asset(presentation_categories[3], 'imageFile') }}" alt="{{ presentation_categories[3].imageName }}">
                                 </div>
                             </div>
                         </div>
@@ -84,13 +84,13 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[4].name }}</h4>
-                                            <p>{{ presentation_categories[4].description }}</p>
+                                            <p>{{ presentation_categories[4].description | raw}}</p>
                                             <div class="main-border-button">
                                                 <a href="{{ path('product', {id: presentation_categories[4].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="/assets/images/baner-right-image-04.jpg">
+                                    <img src="{{ vich_uploader_asset(presentation_categories[4], 'imageFile') }}" alt="{{ presentation_categories[4].imageName }}">
                                 </div>
                             </div>
                         </div>
