@@ -82,7 +82,7 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #fff;
+  background-color: #fffaf3;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -105,7 +105,7 @@ ul {
 p {
   font-size: 14px;
   line-height: 25px;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 /* 
@@ -115,7 +115,7 @@ global styles
 */
 html,
 body {
-  background: #fff;
+  background: #fffaf3;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -127,13 +127,13 @@ body {
 }
 
 ::selection {
-  background: #2a2a2a;
-  color: #fff;
+  background: #332F29;
+  color: #FFFAF2;
 }
 
 ::-moz-selection {
-  background: #2a2a2a;
-  color: #fff;
+  background: #332F29;
+  color: #FFFAF2;
 }
 
 @media (max-width: 991px) {
@@ -154,7 +154,7 @@ body {
 
 .main-border-button a {
   font-size: 13px;
-  color: #fff;
+  color: #FFFAF2;
   border: 1px solid #fff;
   padding: 12px 25px;
   display: inline-block;
@@ -163,14 +163,14 @@ body {
 }
 
 .main-border-button a:hover {
-  background-color: #fff;
-  color: #2a2a2a;
+  background-color: #FFFAF2;
+  color: #332F29;
 }
 
 .main-white-button a {
   font-size: 13px;
-  color: #2a2a2a;
-  background-color: #fff;
+  color: #332F29;
+  background-color: #FFFAF2;
   padding: 12px 25px;
   display: inline-block;
   border-radius: 3px;
@@ -184,7 +184,7 @@ body {
 
 .main-text-button a {
   font-size: 13px;
-  color: #fff;
+  color: #FFFAF2;
   font-weight: 600;
   transition: all .3s;
 }
@@ -196,7 +196,7 @@ body {
 .section-heading h2 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .section-heading span {
@@ -216,7 +216,7 @@ header
 
 .background-header {
   border-bottom: none !important;
-  background-color: #fff;
+  background-color: #FFFAF2;
   height: 80px!important;
   position: fixed!important;
   top: 0px;
@@ -231,17 +231,17 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: #2a2a2a!important;
+  color: #332F29!important;
 }
 
 .background-header .nav li a.active {
-  color: #2a2a2a!important;
+  color: #332F29!important;
 }
 
 .header-area {
   border-bottom: 3px dotted #eee;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #FFFAF2;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -261,7 +261,7 @@ header
 
 .header-area .main-nav .logo {
   line-height: 100px;
-  color: #fff;
+  color: #FFFAF2;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
@@ -307,7 +307,7 @@ header
   display: block;
   font-weight: 600;
   font-size: 15px;
-  color: #2a2a2a;
+  color: #332F29;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -320,7 +320,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -343,14 +343,14 @@ header
   font-family: FontAwesome;
   content: "\f107";
   font-size: 12px;
-  color: #2a2a2a;
+  color: #332F29;
   position: absolute;
   right: 18px;
   top: 12px;
 }
 
 .background-header .main-nav .nav li.submenu:after {
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .header-area .main-nav .nav li.submenu ul {
@@ -375,8 +375,8 @@ header
 .header-area .main-nav .nav li.submenu ul li a {
   opacity: 1;
   display: block;
-  background: #f7f7f7;
-  color: #2a2a2a!important;
+  background: #8A6B41;
+  color: #FFFAF2!important;
   padding-left: 20px;
   height: 40px;
   line-height: 40px;
@@ -558,7 +558,7 @@ header
     width: 100%;
   }
   .header-area {
-    background-color: #f7f7f7;
+    background-color: #8A6B41;
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
@@ -604,7 +604,7 @@ header
     line-height: 50px !important;
     padding: 0px !important;
     border: none !important;
-    background: #f7f7f7 !important;
+    background: #8A6B41 !important;
     color: #191a20 !important;
   }
   .header-area .main-nav .nav li a:hover {
@@ -661,6 +661,7 @@ banner
   border-bottom: 3px dotted #eee;
   padding-top: 160px;
   padding-bottom: 30px;
+  flex-grow: 1;
 }
 
 .main-banner .left-content .thumb img {
@@ -676,7 +677,7 @@ banner
 }
 
 .main-banner .left-content .inner-content h4 {
-  color: #fff;
+  color: #FFFAF2;
   margin-top: -10px;
   font-size: 52px;
   font-weight: 700;
@@ -685,7 +686,7 @@ banner
 
 .main-banner .left-content .inner-content span {
   font-size: 16px;
-  color: #fff;
+  color: #FFFAF2;
   font-weight: 400;
   font-style: italic;
   display: block;
@@ -715,7 +716,7 @@ banner
 }
 
 .main-banner .right-content .right-first-image .thumb .inner-content h4 {
-  color: #fff;
+  color: #FFFAF2;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -723,7 +724,7 @@ banner
 
 .main-banner .right-content .right-first-image .thumb .inner-content span {
   font-size: 16px;
-  color: #fff;
+  color: #FFFAF2;
   font-style: italic;
 }
 
@@ -734,7 +735,7 @@ banner
   left: 15px;
   bottom: 15px;
   text-align: center;
-  background-color: rgba(42,42,42,.97);
+  background-color: #5E503C;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
@@ -754,14 +755,14 @@ banner
 }
 
 .main-banner .right-content .right-first-image .thumb .hover-content h4 {
-  color: #fff;
+  color: #FFFAF2;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 .main-banner .right-content .right-first-image .thumb .hover-content p {
-  color: #fff;
+  color: #FFFAF2;
   padding: 0px 20px;
   margin-bottom: 20px;
 }
@@ -788,12 +789,12 @@ Men
   padding-top: 30px;
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background-color: #FFFAF2;
 }
 
 #lastproducts .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -848,8 +849,8 @@ Men
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
-  background-color: #fff;
+  color: #332F29;
+  background-color: #FFFAF2;
 }
 
 
@@ -879,7 +880,7 @@ Men
 #lastproducts .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -887,7 +888,7 @@ Men
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 #lastproducts .owl-nav .owl-prev {
@@ -917,7 +918,7 @@ Men
 #lastproducts .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -925,7 +926,7 @@ Men
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 
@@ -949,12 +950,12 @@ Women
   padding-top: 30px;
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background-color: #FFFAF2;
 }
 
 #women .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1009,8 +1010,8 @@ Women
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
-  background-color: #fff;
+  color: #332F29;
+  background-color: #FFFAF2;
 }
 
 
@@ -1040,7 +1041,7 @@ Women
 #women .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -1048,7 +1049,7 @@ Women
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 #women .owl-nav .owl-prev {
@@ -1078,7 +1079,7 @@ Women
 #women .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -1086,7 +1087,7 @@ Women
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 /*
@@ -1109,12 +1110,12 @@ Kids
   padding-top: 30px;
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background-color: #FFFAF2;
 }
 
 #kids .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1169,8 +1170,8 @@ Kids
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
-  background-color: #fff;
+  color: #332F29;
+  background-color: #FFFAF2;
 }
 
 
@@ -1200,7 +1201,7 @@ Kids
 #kids .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -1208,7 +1209,7 @@ Kids
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 #kids .owl-nav .owl-prev {
@@ -1238,7 +1239,7 @@ Kids
 #kids .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #332F29;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -1246,7 +1247,7 @@ Kids
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #332F29;
 }
 
 
@@ -1269,7 +1270,7 @@ Explore
 #explore .left-content h2 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 #explore .left-content span {
@@ -1293,7 +1294,7 @@ Explore
 
 #explore .left-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 500;
 }
 
@@ -1306,14 +1307,14 @@ Explore
 }
 
 #explore .left-content .main-border-button a {
-  color: #2a2a2a;
-  border-color: #2a2a2a;
+  color: #332F29;
+  border-color: #332F29;
   margin-top: 35px;
 }
 
 #explore .left-content .main-border-button a:hover {
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #332F29;
+  color: #FFFAF2;
 }
 
 #explore img {
@@ -1341,7 +1342,7 @@ Explore
 #explore .types h4 {
   font-size: 24px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
   padding-top: 90px;
   margin-bottom: 5px;
 }
@@ -1400,7 +1401,7 @@ Social
 }
 
 #social .thumb .icon h6 {
-  color: #fff;
+  color: #FFFAF2;
   position: absolute;
   font-size: 14px;
   bottom: 40px;
@@ -1409,7 +1410,7 @@ Social
 }
 
 #social .thumb .icon i {
-  color: #fff;
+  color: #FFFAF2;
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -1454,7 +1455,7 @@ Subscribe
 }
 
 .subscribe form input::focus {
-  border-color: #2a2a2a;
+  border-color: #332F29;
   border-radius: 0px;
 }
 
@@ -1464,17 +1465,17 @@ Subscribe
   display: inline-block;
   text-align: center;
   line-height: 44px;
-  background-color: #2a2a2a;
+  background-color: #332F29;
   box-shadow: none;
   border: 1px solid transparent;
-  color: #fff;
+  color: #FFFAF2;
   transition: all 0.3s;
 }
 
 .subscribe form button:hover {
-  background-color: #fff;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  background-color: #FFFAF2;
+  border: 1px solid #332F29;
+  color: #332F29;
 }
 
 .subscribe ul li {
@@ -1485,7 +1486,7 @@ Subscribe
 .subscribe ul li {
   font-size: 16px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .subscribe ul li span,
@@ -1496,7 +1497,7 @@ Subscribe
 }
 
 .subscribe ul li span a:hover {
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 
@@ -1509,7 +1510,7 @@ footer
 footer {
   margin-top: 60px;
   padding: 60px 0px 30px 0px;
-  background-color: #2a2a2a;
+  background-color: #332F29;
 }
 
 footer .logo {
@@ -1523,7 +1524,7 @@ footer ul li {
 
 footer ul li a {
   font-size: 14px;
-  color: #fff;
+  color: #FFFAF2;
   transition: all .3s;
 }
 
@@ -1534,7 +1535,7 @@ footer ul li a:hover {
 footer h4 {
   letter-spacing: 0.5px;
   font-size: 16px;
-  color: #fff;
+  color: #FFFAF2;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -1559,17 +1560,17 @@ footer .under-footer ul li a {
 }
 
 footer .under-footer p {
-  color: #fff;
+  color: #FFFAF2;
   font-size: 14px;
   font-weight: 300;
 }
 
 footer .under-footer a {
-  color: #cff;
+  color: #fbead3;
 }
 
 footer .under-footer a:hover {
-  color: #c66;
+  color: #DE8E1F;
 }
 
 
@@ -1582,7 +1583,6 @@ Products Page
 .page-heading {
   margin-top: 160px;
   margin-bottom: 30px;
-  background-image: url(../images/products-page-heading.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1595,7 +1595,7 @@ Products Page
 
 .page-heading .inner-content h2 {
   font-size: 52px;
-  color: #fff;
+  color: #FFFAF2;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -1603,7 +1603,7 @@ Products Page
 .page-heading .inner-content span {
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
+  color: #FFFAF2;
   font-style: italic;
 }
 
@@ -1626,12 +1626,12 @@ Products Page
   padding-top: 20px;
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background-color: #FFFAF2;
 }
 
 #products .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1686,8 +1686,8 @@ Products Page
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
-  background-color: #fff;
+  color: #332F29;
+  background-color: #FFFAF2;
 }
 
 #products .pagination {
@@ -1708,19 +1708,19 @@ Products Page
 #products .pagination ul li a {
   width: 44px;
   height: 44px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #332F29;
   display: inline-block;
   text-align: center;
   line-height: 44px;
   font-size: 14px;
   font-weight: 500;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 #products .pagination ul li a:hover,
 #products .pagination ul li.active a {
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #332F29;
+  color: #FFFAF2;
 }
 
 
@@ -1739,12 +1739,12 @@ Single Product Page
 #product .right-content {
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background-color: #FFFAF2;
 }
 
 #product .right-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 0px;
 }
@@ -1791,7 +1791,7 @@ Single Product Page
 
 #product .right-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 500;
 }
 
@@ -1843,13 +1843,13 @@ Single Product Page
 }
 
 .total .main-border-button a {
-  border-color: #2a2a2a;
-  color: #2a2a2a;
+  border-color: #332F29;
+  color: #332F29;
 }
 
 .total .main-border-button a:hover {
-  color: #fff;
-  background-color: #2a2a2a;
+  color: #FFFAF2;
+  background-color: #332F29;
 }
 
 .quantity {
@@ -1938,7 +1938,7 @@ About Us Page
 .about-us .right-content h4 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .about-us .right-content span {
@@ -1962,7 +1962,7 @@ About Us Page
 
 .about-us .right-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 500;
 }
 
@@ -1988,8 +1988,8 @@ About Us Page
 .about-us .right-content ul li a {
   width: 44px;
   height: 44px;
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #332F29;
+  color: #FFFAF2;
   display: inline-block;
   text-align: center;
   line-height: 44px;
@@ -1999,7 +1999,7 @@ About Us Page
 
 .about-us .right-content ul li a:hover {
   background-color: #eee;
-  color: #2a2a2a;
+  color: #332F29;
 }
 
 .our-team {
@@ -2060,8 +2060,8 @@ About Us Page
 .our-team .team-item .thumb .hover-effect .inner-content ul li a {
   width: 44px;
   height: 44px;
-  background-color: #fff;
-  color: #2a2a2a;
+  background-color: #FFFAF2;
+  color: #332F29;
   display: inline-block;
   text-align: center;
   line-height: 44px;
@@ -2070,8 +2070,8 @@ About Us Page
 }
 
 .our-team .team-item .thumb .hover-effect .inner-content ul li a:hover {
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #332F29;
+  color: #FFFAF2;
 }
 
 .our-team .team-item .down-content {
@@ -2081,7 +2081,7 @@ About Us Page
 
 .our-team .team-item .down-content h4 {
   font-size: 24px;
-  color: #2a2a2a;
+  color: #332F29;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -2124,7 +2124,7 @@ About Us Page
 .our-services .service-item h4 {
   font-size: 24px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #332F29;
   margin-bottom: 20px;
 }
 
@@ -2169,7 +2169,7 @@ contact Us Page
 }
 
 .contact-us form input::focus {
-  border-color: #2a2a2a;
+  border-color: #332F29;
   border-radius: 0px;
 }
 
@@ -2192,7 +2192,7 @@ contact Us Page
 }
 
 .contact-us form textarea::focus {
-  border-color: #2a2a2a;
+  border-color: #332F29;
   border-radius: 0px;
 }
 
@@ -2202,17 +2202,17 @@ contact Us Page
   display: inline-block;
   text-align: center;
   line-height: 44px;
-  background-color: #2a2a2a;
+  background-color: #332F29;
   box-shadow: none;
   border: 1px solid transparent;
-  color: #fff;
+  color: #FFFAF2;
   transition: all 0.3s;
 }
 
 .contact-us form button:hover {
-  background-color: #fff;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  background-color: #FFFAF2;
+  border: 1px solid #332F29;
+  color: #332F29;
 }
 
 
@@ -2302,14 +2302,14 @@ responsive
 
 #preloader {
   overflow: hidden;
-  background-color: #2a2a2a;
+  background-color: #332F29;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   position: fixed;
   z-index: 99999;
-  color: #fff;
+  color: #FFFAF2;
 }
 
 #preloader .jumper {
@@ -2325,7 +2325,7 @@ responsive
 }
 
 #preloader .jumper > div {
-  background-color: #fff;
+  background-color: #FFFAF2;
   width: 10px;
   height: 10px;
   border-radius: 100%;
