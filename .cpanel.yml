@@ -4,4 +4,6 @@ deployment:
     - export DEPLOYPATH=/home/fugi0485/lapanoplidemeli.fugi0485.odns.fr/
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R *  $DEPLOYPATH
-    - /bin/cp .env *  $DEPLOYPATH
+    - /bin/cp .env.local $DEPLOYPATH/.env
+    - /bin/cd $DEPLOYPATH
+    - /bin/composer install
