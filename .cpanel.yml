@@ -2,7 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/fugi0485/lapanopliedemeli.fr/
-    - bin/rm -rf ./public/uploads/*
+    - export REPOSITORYPATH=/home/fugi0485/repositories/lapanopliedemeli/
+    - bin/rm -rf $REPOSITORYPATH/public/uploads/*
 #    - bin/cp -R $DEPLOYPATH/public/uploads ./public/
 #    - bin/rm -rf $DEPLOYPATH/*
 #    - bin/cp -R *  $DEPLOYPATH
