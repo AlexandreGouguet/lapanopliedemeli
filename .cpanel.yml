@@ -6,3 +6,6 @@ deployment:
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R *  $DEPLOYPATH
     - /bin/cp .env.local $DEPLOYPATH/.env
+    - cd $DEPLOYPATH
+    - composer install
+    - php bin/console do:mi:mi -n
