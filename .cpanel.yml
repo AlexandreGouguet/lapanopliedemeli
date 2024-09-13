@@ -2,10 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/fugi0485/lapanopliedemeli.fr/
-#    - bin/cp -R $DEPLOYPATH/public/uploads ./public/
-#    - bin/rm -rf $DEPLOYPATH/*
-#    - bin/cp -R *  $DEPLOYPATH
-#    - bin/cp .env.local $DEPLOYPATH/.env
-#    - bin/cd $DEPLOYPATH
-#    - composer install
-#    - php bin/console do:mi:mi -n
+    - bin/rm -rf ./public/*
+    - bin/cp -R $DEPLOYPATH/public/uploads ./public/
+    - bin/rm -rf $DEPLOYPATH/*
+    - bin/cp -R *  $DEPLOYPATH
+    - bin/cp .env.local $DEPLOYPATH/.env
+    - bin/cd $DEPLOYPATH
+    - composer install
+    - php bin/console do:mi:mi -n
