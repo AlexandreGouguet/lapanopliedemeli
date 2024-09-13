@@ -8,7 +8,7 @@
                             <h4>{{ presentation_categories[0].name }}</h4>
                             <span id="main-description">{{ presentation_categories[0].description | raw}}</span>
                             <div class="main-border-button">
-                                <a href="{{ path('product', {id: presentation_categories[0].id}) }}">Acheter !</a>
+                                <a href="{{ path('products', {categoryId: presentation_categories[0].id}) }}">Acheter !</a>
                             </div>
                         </div>
                         <img src="{{ vich_uploader_asset(presentation_categories[0], 'imageFile') }}" alt="{{ presentation_categories[0].imageName }}">
@@ -29,7 +29,7 @@
                                             <h4>{{ presentation_categories[1].name }}</h4>
                                             <p>{{ presentation_categories[1].description | raw}}</p>
                                             <div class="main-border-button">
-                                                <a href="{{ path('product', {id: presentation_categories[1].id}) }}">Découvrir plus</a>
+                                                <a href="{{ path('products', {categoryId: presentation_categories[1].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                             <h4>{{ presentation_categories[2].name }}</h4>
                                             <p>{{ presentation_categories[2].description | raw}}</p>
                                             <div class="main-border-button">
-                                                <a href="{{ path('product', {id: presentation_categories[2].id}) }}">Découvrir plus</a>
+                                                <a href="{{ path('products', {categoryId: presentation_categories[2].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
                                             <h4>{{ presentation_categories[3].name }}</h4>
                                             <p>{{ presentation_categories[3].description | raw}}</p>
                                             <div class="main-border-button">
-                                                <a href="{{ path('product', {id: presentation_categories[3].id}) }}">Découvrir plus</a>
+                                                <a href="{{ path('products', {categoryId: presentation_categories[3].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                             <h4>{{ presentation_categories[4].name }}</h4>
                                             <p>{{ presentation_categories[4].description | raw}}</p>
                                             <div class="main-border-button">
-                                                <a href="{{ path('product', {id: presentation_categories[4].id}) }}">Découvrir plus</a>
+                                                <a href="{{ path('products', {categoryId: presentation_categories[4].id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>

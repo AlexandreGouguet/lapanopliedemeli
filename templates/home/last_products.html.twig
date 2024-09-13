@@ -24,7 +24,11 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <img src="{{ vich_uploader_asset(product) }}" alt="{{ product.name }}">
+                                {% if product.imageName is not null %}
+                                    <img src="{{ vich_uploader_asset(product) }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img src="http://fakeimg.pl/200" alt="{{ product.name }}">
+                                {% endif %}
                             </div>
                             <div class="down-content">
                                 <h4>{{ product.name }}</h4>
