@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fugi0485/lapanoplidemeli.fugi0485.odns.fr/
+    - export DEPLOYPATH=/home/fugi0485/lapanopliedemeli.fr/
     - /bin/cp -R $DEPLOYPATH/public/uploads ./public/
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R *  $DEPLOYPATH
