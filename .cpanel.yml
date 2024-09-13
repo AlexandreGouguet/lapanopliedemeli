@@ -6,5 +6,5 @@ deployment:
     - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R *  $DEPLOYPATH
     - /bin/cp .env.local $DEPLOYPATH/.env
-#    - composer install --working-dir=$DEPLOYPATH
+    - composer install --working-dir=/home/fugi0485/lapanopliedemeli.fr/
     - php $DEPLOYPATH/bin/console do:mi:mi -n
