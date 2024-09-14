@@ -53,6 +53,26 @@
         <source>Category</source>
         <target>Catégorie</target>
       </trans-unit>
+      <trans-unit id="messagesfr13" resname="Categories">
+        <source>Categories</source>
+        <target>Catégories</target>
+      </trans-unit>
+      <trans-unit id="messagesfr14" resname="ImageResolutionHelp">
+        <source>ImageResolutionHelp</source>
+        <target>Image en 385x330 pixels conseillée</target>
+      </trans-unit>
+      <trans-unit id="messagesfr15" resname="ReturnToSite">
+        <source>ReturnToSite</source>
+        <target>Retour au site</target>
+      </trans-unit>
+      <trans-unit id="messagesfr16" resname="Image File">
+        <source>Image File</source>
+        <target>Fichier image</target>
+      </trans-unit>
+      <trans-unit id="messagesfr17" resname="Image">
+        <source>Image</source>
+        <target>Image</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

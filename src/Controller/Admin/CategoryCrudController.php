@@ -22,7 +22,7 @@ class CategoryCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextEditorField::new('description'),
-            Field::new('imageFile')->setFormType(VichImageType::class)->onlyOnForms(),
+            Field::new('imageFile')->setFormType(VichImageType::class)->onlyOnForms()->setHelp('ImageResolutionHelp'),
             ImageField::new('imageName', 'Image')->setBasePath('/uploads/categories')->onlyOnIndex(),
         ];
     }
