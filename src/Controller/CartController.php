@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Cart;
 use App\Entity\CartProduct;
 use App\Repository\CartProductRepository;
 use App\Repository\CartRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
+use App\Service\PaypalPaymentService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,14 +18,38 @@ use Symfony\Component\Routing\Attribute\Route;
 class CartController extends AbstractController
 {
     #[Route('/cart', name: 'cart')]
-    public function index(CategoryRepository $categoryRepository, CartRepository $cartRepository): Response
+    public function index(
+        Request $request,
+        CategoryRepository $categoryRepository,
+        CartRepository $cartRepository,
+        PaypalPaymentService $paymentService,
+        EntityManagerInterface $entityManager
+    ): Response
     {
-        $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
+        $cart = $cartRepository->findOneBy(['user' => $this->getUser(), 'status' => Cart::STATUS_NEW]);
+
+        if($status = $request->query->get('status')){
+            if($status === 'success'){
+                $cart->setStatus(Cart::STATUS_PAYED);
+                $newCart = new Cart();
+                $newCart->setUser($this->getUser());
+
+                $entityManager->persist($newCart);
+                $entityManager->flush();
+                $cart = $newCart;
+                $this->addFlash('success', "Commande validée.");
+            }
+            if($status === 'error'){
+                $this->addFlash('danger', "Commande en erreur. Veuillez réessayer.");
+            }
+        }
+
         return $this->render(
             'cart/cart.html.twig',
             [
                 'categories' => $categoryRepository->findAll(),
-                'cart' => $cart
+                'cart' => $cart,
+                'paypalUi' => $paymentService->ui($cart)
             ]
         );
     }
@@ -61,7 +87,15 @@ class CartController extends AbstractController
 
         $quantity = $request->query->get('quantity', 1);
         $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
-        $cartProduct = $cartProductRepository->findOneBy(['product' => $productId, 'cart' => $cart]);
+
+        if($cart === null){
+            $cart = new Cart();
+            $cart->setUser($this->getUser());
+            $cartProduct = null;
+            $entityManager->persist($cart);
+        } else {
+            $cartProduct = $cartProductRepository->findOneBy(['product' => $productId, 'cart' => $cart]);
+        }
 
         if($cartProduct !== null){
             $cartProduct->setQuantity($cartProduct->getQuantity() + $quantity);

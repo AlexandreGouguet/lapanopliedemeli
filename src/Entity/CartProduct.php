@@ -25,6 +25,11 @@ class CartProduct
     #[ORM\JoinColumn(nullable: false)]
     private ?Cart $cart = null;
 
+    public function __toString(): string
+    {
+        return $this->getProduct()->getName() . ' (' . $this->getQuantity() . ')';
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -65,5 +65,31 @@
         <a href="{{ path('cart_empty') }}">
             <button class="btn btn-lg btn-danger">Vider mon panier</button>
         </a>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 m-auto">
+                    {{ paypalUi | raw }}
+                </div>
+            </div>
+        </div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('danger') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        function redirectToSuccess(){
+            window.location.href = "{{ path('cart', {status: 'success'}) }}";
+        }
+    </script>
 {% endblock %}

@@ -2390,3 +2390,7 @@ responsive
 .main-banner #main-description {
   width: 85%;
 }
+
+#paypal-button-container {
+  margin-top: 40px;
+}

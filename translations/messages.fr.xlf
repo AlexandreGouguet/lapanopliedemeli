@@ -73,6 +73,42 @@
         <source>Image</source>
         <target>Image</target>
       </trans-unit>
+      <trans-unit id="messagesfr18" resname="Cart">
+        <source>Cart</source>
+        <target>Commande</target>
+      </trans-unit>
+      <trans-unit id="messagesfr19" resname="Carts">
+        <source>Carts</source>
+        <target>Commandes</target>
+      </trans-unit>
+      <trans-unit id="messagesfr20" resname="ID">
+        <source>ID</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="messagesfr21" resname="Product.Name">
+        <source>Product.Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="messagesfr22" resname="Cart Products">
+        <source>Cart Products</source>
+        <target>Produit(s)</target>
+      </trans-unit>
+      <trans-unit id="messagesfr23" resname="Status">
+        <source>Status</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="messagesfr24" resname="new">
+        <source>new</source>
+        <target>Nouvelle</target>
+      </trans-unit>
+      <trans-unit id="messagesfr25" resname="payed">
+        <source>payed</source>
+        <target>Payée</target>
+      </trans-unit>
+      <trans-unit id="messagesfr26" resname="closed">
+        <source>closed</source>
+        <target>Envoyée</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
