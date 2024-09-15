@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>{% block title %}Accueil{% endblock %}</title>
 
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
         <title>Hexashop Ecommerce HTML CSS Template</title>
@@ -16,40 +15,24 @@
             <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
             <link rel="stylesheet" href="/assets/css/templatemo-hexashop.css">
             <link rel="stylesheet" href="/assets/css/owl-carousel.css">
-            <link rel="stylesheet" href="/assets/css/lightbox.css">
         {% endblock %}
     </head>
     <body>
         {% include 'base/header.html.twig' %}
         {% include 'base/preloader.html.twig' %}
-        {% block body %}
-        {% endblock %}
+        {% block body %}{% endblock %}
 
         {% include 'base/footer.html.twig' %}
 
         <!-- jQuery -->
         <script src="/assets/js/jquery-2.1.0.min.js"></script>
-
         <!-- Bootstrap -->
-        <script src="/assets/js/popper.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
-
         <!-- Plugins -->
         <script src="/assets/js/owl-carousel.js"></script>
-        <script src="/assets/js/accordions.js"></script>
-        <script src="/assets/js/datepicker.js"></script>
-        <script src="/assets/js/scrollreveal.min.js"></script>
-        <script src="/assets/js/waypoints.min.js"></script>
-        <script src="/assets/js/jquery.counterup.min.js"></script>
-        <script src="/assets/js/imgfix.min.js"></script>
-        <script src="/assets/js/slick.js"></script>
-        <script src="/assets/js/lightbox.js"></script>
-        <script src="/assets/js/isotope.js"></script>
-
         <!-- Global Init -->
         <script src="/assets/js/custom.js"></script>
 
-        {% block script %}
-        {% endblock %}
+        {% block script %}{% endblock %}
     </body>
 </html>
