@@ -19,7 +19,7 @@
                 <div class="right-content">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div class="category">
                                 <div class="thumb">
                                     <div class="inner-content">
                                         <h4>{{ presentation_categories[1].name }}</h4>
@@ -27,7 +27,9 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[1].name }}</h4>
-                                            <p>{{ presentation_categories[1].description | raw}}</p>
+                                            <div class="category-description">
+                                                {{ presentation_categories[1].description | raw}}
+                                            </div>
                                             <div class="main-border-button">
                                                 <a href="{{ path('products', {categoryId: presentation_categories[1].id}) }}">Découvrir plus</a>
                                             </div>
@@ -38,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div class="category">
                                 <div class="thumb">
                                     <div class="inner-content">
                                         <h4>{{ presentation_categories[2].name }}</h4>
@@ -46,7 +48,9 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[2].name }}</h4>
-                                            <p>{{ presentation_categories[2].description | raw}}</p>
+                                            <div class="category-description">
+                                                {{ presentation_categories[2].description | raw}}
+                                            </div>
                                             <div class="main-border-button">
                                                 <a href="{{ path('products', {categoryId: presentation_categories[2].id}) }}">Découvrir plus</a>
                                             </div>
@@ -57,7 +61,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div class="category">
                                 <div class="thumb">
                                     <div class="inner-content">
                                         <h4>{{ presentation_categories[3].name }}</h4>
@@ -65,7 +69,9 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[3].name }}</h4>
-                                            <p>{{ presentation_categories[3].description | raw}}</p>
+                                            <div class="category-description">
+                                                {{ presentation_categories[3].description | raw}}
+                                            </div>
                                             <div class="main-border-button">
                                                 <a href="{{ path('products', {categoryId: presentation_categories[3].id}) }}">Découvrir plus</a>
                                             </div>
@@ -76,7 +82,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div class="category">
                                 <div class="thumb">
                                     <div class="inner-content">
                                         <h4>{{ presentation_categories[4].name }}</h4>
@@ -84,7 +90,9 @@
                                     <div class="hover-content">
                                         <div class="inner">
                                             <h4>{{ presentation_categories[4].name }}</h4>
-                                            <p>{{ presentation_categories[4].description | raw}}</p>
+                                            <div class="category-description">
+                                                {{ presentation_categories[4].description | raw}}
+                                            </div>
                                             <div class="main-border-button">
                                                 <a href="{{ path('products', {categoryId: presentation_categories[4].id}) }}">Découvrir plus</a>
                                             </div>

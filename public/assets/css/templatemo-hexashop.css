@@ -633,9 +633,19 @@ Main banner
   flex-grow: 1;
 }
 
+.main-banner .left-content {
+  height: 1000px;
+}
+
+.main-banner .left-content .thumb {
+  height: 100%;
+}
+
 .main-banner .left-content .thumb img {
+  display: block;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
+  object-fit: cover;
 }
 
 .main-banner .left-content .inner-content {
@@ -662,21 +672,25 @@ Main banner
   margin-bottom: 30px;
 }
 
-.main-banner .right-content .right-first-image {
-  margin-bottom: 28.5px;
+.main-banner .right-content .category {
+  margin-bottom: 30px;
+  height: 485px;
 }
 
-.main-banner .right-content .right-first-image .thumb {
+.main-banner .right-content .category .thumb {
   position: relative;
   text-align: center;
+  height: 100%;
 }
 
-.main-banner .right-content .right-first-image .thumb img {
+.main-banner .right-content .category .thumb img {
+  display: block;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
+  object-fit: cover;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content {
+.main-banner .right-content .category .thumb .inner-content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -684,20 +698,20 @@ Main banner
   text-align: center;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content h4 {
+.main-banner .right-content .category .thumb .inner-content h4 {
   color: #FFFAF2;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.main-banner .right-content .right-first-image .thumb .inner-content span {
+.main-banner .right-content .category .thumb .inner-content span {
   font-size: 16px;
   color: #FFFAF2;
   font-style: italic;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content {
+.main-banner .right-content .category .thumb .hover-content {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -710,12 +724,12 @@ Main banner
   transition: all 0.5s;
 }
 
-.main-banner .right-content .right-first-image .thumb:hover .hover-content {
+.main-banner .right-content .category .thumb:hover .hover-content {
   opacity: 1;
   visibility: visible;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content .inner {
+.main-banner .right-content .category .thumb .hover-content .inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -723,14 +737,14 @@ Main banner
   width: 100%;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content h4 {
+.main-banner .right-content .category .thumb .hover-content h4 {
   color: #FFFAF2;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.main-banner .right-content .right-first-image .thumb .hover-content p {
+.main-banner .right-content .category .thumb .hover-content .category-description {
   color: #FFFAF2;
   padding: 0 20px;
   margin-bottom: 20px;
@@ -831,7 +845,7 @@ Last products
 #lastproducts .owl-dots {
   display: none;
 }
-    
+
 #lastproducts .owl-nav .owl-prev{
   position: absolute;
   left: -80px;
@@ -895,10 +909,10 @@ Last products
   border :1px solid #332F29;
 }
 
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 footer {
   margin-top: 60px;
@@ -966,10 +980,10 @@ footer .under-footer a:hover {
   color: #DE8E1F;
 }
 
-/* 
+/*
 ---------------------------------------------
 Products Page
---------------------------------------------- 
+---------------------------------------------
 */
 .page-heading {
   margin-top: 160px;
@@ -1114,10 +1128,10 @@ Products Page
   color: #FFFAF2;
 }
 
-/* 
+/*
 ---------------------------------------------
 Single Product Page
---------------------------------------------- 
+---------------------------------------------
 */
 #product .left-images img {
   width: 100%;
@@ -1243,7 +1257,7 @@ Single Product Page
 
 .quantity {
   display: inline-block; }
- 
+
  .quantity .input-text.qty {
   width: 35px;
   height: 39px;
@@ -1252,20 +1266,20 @@ Single Product Page
   background-color: transparent;
   border: 1px solid #efefef;
  }
- 
+
  .quantity.buttons_added {
   text-align: left;
   position: relative;
   white-space: nowrap;
   vertical-align: top; }
- 
+
  .quantity.buttons_added input {
   display: inline-block;
   margin: 0;
   vertical-align: top;
   box-shadow: none;
  }
- 
+
  .quantity.buttons_added .minus,
  .quantity.buttons_added .plus {
   padding: 7px 10px 8px;
@@ -1273,41 +1287,41 @@ Single Product Page
   background-color: #ffffff;
   border: 1px solid #efefef;
   cursor:pointer;}
- 
+
  .quantity.buttons_added .minus {
   border-right: 0; }
- 
+
  .quantity.buttons_added .plus {
   border-left: 0; }
- 
+
  .quantity.buttons_added .minus:hover,
  .quantity.buttons_added .plus:hover {
   background: #eeeeee; }
- 
+
  .quantity input::-webkit-outer-spin-button,
  .quantity input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0; }
-  
+
   .quantity.buttons_added .minus:focus,
  .quantity.buttons_added .plus:focus {
   outline: none; }
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 1200px) {
-  .main-banner .right-content .right-first-image .thumb .hover-content p {
+  .main-banner .right-content .category .thumb .hover-content p {
     display: none;
   }
 }
 
 @media (max-width: 992px) {
-  .main-banner .right-content .right-first-image .thumb .hover-content p {
+  .main-banner .right-content .category .thumb .hover-content p {
     display: block;
   }
   .header-area .main-nav .nav li.submenu:after {
