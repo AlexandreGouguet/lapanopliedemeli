@@ -2,14 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Cart;
-use App\Entity\CartProduct;
-use App\Repository\CartProductRepository;
-use App\Repository\CartRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\ProductRepository;
+use App\Service\CartProductService;
+use App\Service\CartService;
 use App\Service\PaypalPaymentService;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,23 +16,20 @@ class CartController extends AbstractController
     #[Route('/cart', name: 'cart')]
     public function index(
         Request $request,
+        CartService $cartService,
         CategoryRepository $categoryRepository,
-        CartRepository $cartRepository,
-        PaypalPaymentService $paymentService,
-        EntityManagerInterface $entityManager
+        PaypalPaymentService $paymentService
     ): Response
     {
-        $cart = $cartRepository->findOneBy(['user' => $this->getUser(), 'status' => Cart::STATUS_NEW]);
+        if(!$this->isGranted('IS_AUTHENTICATED')){
+            return $this->redirectToRoute('app_login');
+        }
+
+        $cart = $cartService->findCartByUser($this->getUser());
 
         if($status = $request->query->get('status')){
             if($status === 'success'){
-                $cart->setStatus(Cart::STATUS_PAYED);
-                $newCart = new Cart();
-                $newCart->setUser($this->getUser());
-
-                $entityManager->persist($newCart);
-                $entityManager->flush();
-                $cart = $newCart;
+                $cart = $cartService->payCommand($cart, $this->getUser());
                 $this->addFlash('success', "Commande validée.");
             }
             if($status === 'error'){
@@ -56,17 +49,17 @@ class CartController extends AbstractController
 
     #[Route('/cart/remove/{cartProductId}', name: 'cart_remove')]
     public function removeProduct(
-        CartRepository $cartRepository,
-        CartProductRepository $cartProductRepository,
-        EntityManagerInterface $entityManager,
+        CartService $cartService,
+        CartProductService $cartProductService,
         int $cartProductId
     ): Response
     {
-        $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
-        $cartProduct = $cartProductRepository->findOneBy(['id' => $cartProductId]);
-        $cart->removeCartProduct($cartProduct);
+        if(!$this->isGranted('IS_AUTHENTICATED')){
+            return $this->redirectToRoute('app_login');
+        }
 
-        $entityManager->flush();
+        $cart = $cartService->findCartByUser($this->getUser());
+        $cartProductService->removeCartProductFromCart($cart, $cartProductId);
 
         return $this->redirectToRoute('cart');
     }
@@ -74,10 +67,8 @@ class CartController extends AbstractController
     #[Route('/cart/add/{productId}', name: 'cart_add')]
     public function addProduct(
         Request $request,
-        CartRepository $cartRepository,
-        CartProductRepository $cartProductRepository,
-        ProductRepository $productRepository,
-        EntityManagerInterface $entityManager,
+        CartService $cartService,
+        CartProductService $cartProductService,
         int $productId
     ): Response
     {
@@ -86,40 +77,20 @@ class CartController extends AbstractController
         }
 
         $quantity = $request->query->get('quantity', 1);
-        $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
-
-        if($cart === null){
-            $cart = new Cart();
-            $cart->setUser($this->getUser());
-            $cartProduct = null;
-            $entityManager->persist($cart);
-        } else {
-            $cartProduct = $cartProductRepository->findOneBy(['product' => $productId, 'cart' => $cart]);
-        }
-
-        if($cartProduct !== null){
-            $cartProduct->setQuantity($cartProduct->getQuantity() + $quantity);
-        } else {
-            $product = $productRepository->findOneBy(['id' => $productId]);
-            $cartProduct = new CartProduct();
-            $cartProduct->setCart($cart);
-            $cartProduct->setProduct($product);
-            $cartProduct->setQuantity($quantity);
-            $entityManager->persist($cartProduct);
-        }
-
-        $entityManager->flush();
+        $cart = $cartService->findCartByUser($this->getUser());
+        $cartProductService->addQuantityToCartProduct($cart, $productId, $quantity);
 
         return $this->redirectToRoute('product', ['id' => $productId]);
     }
 
     #[Route('/cart/empty', name: 'cart_empty')]
-    public function empty(CartRepository $cartRepository, EntityManagerInterface $entityManager): Response
+    public function empty(CartService $cartService): Response
     {
-        $cart = $cartRepository->findOneBy(['user' => $this->getUser()]);
-        $cart->emptyCartProduct();
+        if(!$this->isGranted('IS_AUTHENTICATED')){
+            return $this->redirectToRoute('app_login');
+        }
 
-        $entityManager->flush();
+        $cartService->emptyUserCartProduct($this->getUser());
 
         return $this->redirectToRoute('cart');
     }

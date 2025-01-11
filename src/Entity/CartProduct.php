@@ -59,6 +59,13 @@ class CartProduct
         return $this;
     }
 
+    public function addQuantity(int $quantity): static
+    {
+        $this->quantity += $quantity;
+
+        return $this;
+    }
+
     public function getCart(): ?Cart
     {
         return $this->cart;
