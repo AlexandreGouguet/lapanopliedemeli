@@ -18,90 +18,31 @@
             <div class="col-lg-6">
                 <div class="right-content">
                     <div class="row">
+                        {% for category in presentation_categories %}
+                        {% if loop.index != 1 %}
                         <div class="col-lg-6">
                             <div class="category">
                                 <div class="thumb">
                                     <div class="inner-content">
-                                        <h4>{{ presentation_categories[1].name }}</h4>
+                                        <h4>{{ category.name }}</h4>
                                     </div>
                                     <div class="hover-content">
                                         <div class="inner">
-                                            <h4>{{ presentation_categories[1].name }}</h4>
+                                            <h4>{{ category.name }}</h4>
                                             <div class="category-description">
-                                                {{ presentation_categories[1].description | raw}}
+                                                {{ category.description | raw}}
                                             </div>
                                             <div class="main-border-button">
-                                                <a href="{{ path('products', {categoryId: presentation_categories[1].id}) }}">Découvrir plus</a>
+                                                <a href="{{ path('products', {categoryId: category.id}) }}">Découvrir plus</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="{{ vich_uploader_asset(presentation_categories[1], 'imageFile') }}" alt="{{ presentation_categories[1].imageName }}">
+                                    <img src="{{ vich_uploader_asset(category, 'imageFile') }}" alt="{{ category.imageName }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="category">
-                                <div class="thumb">
-                                    <div class="inner-content">
-                                        <h4>{{ presentation_categories[2].name }}</h4>
-                                    </div>
-                                    <div class="hover-content">
-                                        <div class="inner">
-                                            <h4>{{ presentation_categories[2].name }}</h4>
-                                            <div class="category-description">
-                                                {{ presentation_categories[2].description | raw}}
-                                            </div>
-                                            <div class="main-border-button">
-                                                <a href="{{ path('products', {categoryId: presentation_categories[2].id}) }}">Découvrir plus</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="{{ vich_uploader_asset(presentation_categories[2], 'imageFile') }}" alt="{{ presentation_categories[2].imageName }}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="category">
-                                <div class="thumb">
-                                    <div class="inner-content">
-                                        <h4>{{ presentation_categories[3].name }}</h4>
-                                    </div>
-                                    <div class="hover-content">
-                                        <div class="inner">
-                                            <h4>{{ presentation_categories[3].name }}</h4>
-                                            <div class="category-description">
-                                                {{ presentation_categories[3].description | raw}}
-                                            </div>
-                                            <div class="main-border-button">
-                                                <a href="{{ path('products', {categoryId: presentation_categories[3].id}) }}">Découvrir plus</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="{{ vich_uploader_asset(presentation_categories[3], 'imageFile') }}" alt="{{ presentation_categories[3].imageName }}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="category">
-                                <div class="thumb">
-                                    <div class="inner-content">
-                                        <h4>{{ presentation_categories[4].name }}</h4>
-                                    </div>
-                                    <div class="hover-content">
-                                        <div class="inner">
-                                            <h4>{{ presentation_categories[4].name }}</h4>
-                                            <div class="category-description">
-                                                {{ presentation_categories[4].description | raw}}
-                                            </div>
-                                            <div class="main-border-button">
-                                                <a href="{{ path('products', {categoryId: presentation_categories[4].id}) }}">Découvrir plus</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="{{ vich_uploader_asset(presentation_categories[4], 'imageFile') }}" alt="{{ presentation_categories[4].imageName }}">
-                                </div>
-                            </div>
-                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
